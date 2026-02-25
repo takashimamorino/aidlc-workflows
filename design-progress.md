@@ -36,10 +36,7 @@
 - Step 1: UI Design（ラフレベル: 画面一覧・遷移フロー・画面概要）→ `aidlc-docs/blueprint/ui-design.md`
 - Step 2: Architecture（UI構成を踏まえて技術選定）→ `aidlc-docs/blueprint/architecture.md`
 - Step 3: Data Model → `aidlc-docs/blueprint/data-model.md`
-- Step 4: Team Plan（チーム・並列設計）→ `aidlc-docs/blueprint/team-plan.md`
-  - 人数 + 担当領域 + 並列ストリーム設計
-  - ※ ラフ UI 基準の暫定版。Phase 3 UI 確定後に見直す
-- Step 5: Approval Gate（承認）
+- Step 4: Approval Gate（承認）
 
 ### Phase 3: Prototype（検証）
 
@@ -99,8 +96,7 @@ aidlc-workflows/
     ├── blueprint/           # Phase 2 成果物
     │   ├── architecture.md
     │   ├── ui-design.md
-    │   ├── data-model.md
-    │   └── team-plan.md
+    │   └── data-model.md
     ├── prototype/           # Phase 3 成果物
     │   └── design.md
     ├── construction/        # Phase 4 成果物

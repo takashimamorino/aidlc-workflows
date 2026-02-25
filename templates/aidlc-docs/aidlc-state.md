@@ -28,10 +28,7 @@
 - [ ] Step 3: Data Model（データモデル設計）
   - AIがエンティティ・リレーションを設計する
   - 成果物: `blueprint/data-model.md`
-- [ ] Step 4: Team Plan（チーム・並列設計）
-  - チームメンバー数・担当領域・並列ストリームを設計する
-  - 成果物: `blueprint/team-plan.md`
-- [ ] Step 5: Approval Gate（承認）
+- [ ] Step 4: Approval Gate（承認）
   - 人間が設計方針を確認し承認する
 
 ## Phase 3: Prototype（検証）
@@ -54,7 +51,7 @@
 ## Phase 4: Construction（実装）※仮
 
 - [ ] Step 1: Task Decomposition（タスク分解）
-  - AIが設計 + Team Plan に基づきタスクを生成する
+  - AIが設計に基づきタスクを生成する
   - 成果物: `construction/tasks.md`
 - [ ] Step 2: Implementation（実装）
   - 各メンバーがAIとペアで担当タスクを実装する

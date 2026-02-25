@@ -19,7 +19,6 @@ Phase 3 の各ステップに入る前に、以下の成果物を一括で読み
 - `aidlc-docs/blueprint/ui-design.md`
 - `aidlc-docs/blueprint/architecture.md`
 - `aidlc-docs/blueprint/data-model.md`
-- `aidlc-docs/blueprint/team-plan.md`
 
 ---
 
@@ -165,6 +164,5 @@ Phase 3 の各ステップに入る前に、以下の成果物を一括で読み
 
 - 人間がプロトタイプを承認した
 - UI設計（画面構成・遷移導線・表示要素）が確定した
-- `aidlc-docs/blueprint/team-plan.md` を確定した UI 設計に照らして見直し、必要に応じて改訂する
 - `aidlc-docs/aidlc-state.md` の Step 3 チェックボックスを `[x]` にする
 - `aidlc-docs/aidlc-state.md` の `Current Phase` を `Phase 4 - Construction` に更新する
