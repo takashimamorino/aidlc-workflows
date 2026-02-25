@@ -1,6 +1,6 @@
 # Architecture
 
-## システム概要図
+## システム構成図
 
 ```mermaid
 graph TB
@@ -18,10 +18,12 @@ graph TB
 | レイヤー | 技術 | 選定理由 |
 |---------|------|---------|
 | フロントエンド | React + Vite | 軽量で高速。SPA構築に最適 |
-| スタイリング | Tailwind CSS | ユーティリティファーストで素早くUI構築 |
+| スタイリング | Tailwind CSS v4 | ユーティリティファーストで素早くUI構築 |
+| 言語 | TypeScript | 型安全性 |
 | データ永続化 | localStorage | サーバー不要。個人利用に十分 |
 | パッケージマネージャー | Bun | npm互換で高速。ランタイムとしても使用 |
 | テスト | Bun test | Bun組み込みのテストランナー。Jest互換 |
+| ルーティング | React Router | 2ページ構成の画面遷移 |
 | デプロイ | 静的ホスティング | Viteビルド出力をそのままホスティング |
 
 ## ディレクトリ構成
@@ -37,6 +39,7 @@ simple-tasks/
 ├── src/
 │   ├── main.tsx
 │   ├── App.tsx
+│   ├── index.css
 │   ├── components/
 │   │   ├── TaskInput.tsx
 │   │   ├── TaskList.tsx

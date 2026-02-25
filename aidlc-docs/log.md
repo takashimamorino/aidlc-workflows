@@ -113,7 +113,7 @@
 
 ---
 
-### Step 2: UI/UX Design（UI/UX設計）
+### Step 2: UI Design（UI設計）
 
 **開始**: 2026-02-24
 
@@ -267,5 +267,38 @@
 #### フィードバック結果
 
 - 承認。Phase 4 へ進む
+
+**完了**: 2026-02-24
+
+---
+
+## Phase 2〜3 再実行（UI設計確定の検証）
+
+**開始**: 2026-02-24
+
+### 再実行の理由
+
+Phase 3 Prototype にUI設計確定の要件を追加したため、新しいワークフローを検証するために Phase 2 から再実行。
+
+### Phase 2 再実行サマリー
+
+- **Step 1 Architecture**: 前回同様 React + Vite + Tailwind CSS v4 + Bun を選択
+- **Step 2 UI Design**: 1画面構成 → **2ページ構成**に変更（タスク一覧 `/`、完了済み `/completed`）。React Router を追加
+- **Step 3 Data Model**: 変更なし（Task エンティティ1つ、localStorage）
+- **Step 4 Team Plan**: ページ単位の分担に変更（A: メイン画面+共通基盤、B: 完了済み画面+ルーティング）
+- **Step 5 Approval Gate**: 承認
+
+### Phase 3 再実行サマリー
+
+- **Step 1 Prototype Design（+ UI設計確定）**: 2ページ構成のUI設計を strategy に組み込み。画面一覧・遷移フロー・各画面レイアウト・構成要素を定義。UC5件。人間がUI設計を確認し承認
+- **Step 2 Rapid Build**: コンポーネント分割（lib/storage.ts, hooks/useTasks.ts, pages/TaskListPage.tsx, pages/CompletedPage.tsx）で実装。React Router によるページ遷移を実装。ビルド成功
+- **Step 3 Review & Feedback**: 承認。UI設計確定。Phase 4 へ進む
+
+### 主な変更点（前回比）
+
+- 1画面 → 2ページ構成
+- React Router 追加
+- Phase 3 Step 1 でUI設計確定のプロセスが機能した
+- フィードバックテーブルが「画面構成・導線」と「見た目・表示」に細分化された
 
 **完了**: 2026-02-24

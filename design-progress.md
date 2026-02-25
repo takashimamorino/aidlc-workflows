@@ -18,46 +18,60 @@
 - [ ] 全フェーズ確定後、ドキュメント最終整備
 - [ ] Claude Code プラグイン化
 
+## 用語規約
+
+- **確認**: 中間ステップで方向性をチェックすること。修正すればそのまま続行する
+- **承認**: Approval Gate でフェーズ全体を判断すること。次フェーズに進む / 戻るを決定する
+
 ## 確定済みフェーズ詳細
 
 ### Phase 1: Inception（構想）
+
 - Step 1: Intent（意図の表明）→ `aidlc-docs/inception/intent.md`
 - Step 2: Requirements（要件の具体化）→ `aidlc-docs/inception/requirements.md`, `aidlc-docs/inception/user-stories.md`
 - Step 3: Approval Gate（承認）
 
 ### Phase 2: Blueprint（設計）
-- Step 1: Architecture → `aidlc-docs/blueprint/architecture.md`
-- Step 2: UI/UX Design → `aidlc-docs/blueprint/ui-design.md`
+
+- Step 1: UI Design（ラフレベル: 画面一覧・遷移フロー・画面概要）→ `aidlc-docs/blueprint/ui-design.md`
+- Step 2: Architecture（UI構成を踏まえて技術選定）→ `aidlc-docs/blueprint/architecture.md`
 - Step 3: Data Model → `aidlc-docs/blueprint/data-model.md`
 - Step 4: Team Plan（チーム・並列設計）→ `aidlc-docs/blueprint/team-plan.md`
   - 人数 + 担当領域 + 並列ストリーム設計
+  - ※ ラフ UI 基準の暫定版。Phase 3 UI 確定後に見直す
 - Step 5: Approval Gate（承認）
 
 ### Phase 3: Prototype（検証）
-- Step 1: Prototype Design → `aidlc-docs/prototype/design.md`
-- Step 2: Rapid Build → `aidlc-docs/prototype/` 配下のコード
+
+- Phase 2 のラフ UI 設計を実装レベルに詳細化し、確定する。UXは対象外。
+- Step 1: Prototype Design（ラフ UI → 実装レベル UI 確定）→ `aidlc-docs/prototype/design.md`
+- Step 2: Rapid Build（UI設計に忠実に実装）→ `aidlc-docs/prototype/` 配下のコード
 - Step 3: Review & Feedback（フィードバックループ）
   - 方向性が違う → Phase 1 に戻る
   - 設計を変えたい → Phase 2 に戻る
-  - UI/操作感を改善 → Step 2 に戻り再ビルド
-  - OK → Phase 4 へ進む
+  - 画面構成・導線を変えたい → Step 1 に戻りUI設計修正
+  - 画面の見た目・表示を調整 → Step 2 に戻り再ビルド
+  - OK → Phase 4 へ進む（UI設計確定）
   - ※ 戻る際は `aidlc-docs/log.md` にフィードバック理由を記録
 
 ### Phase 4〜6（仮案・未確定）
 
 #### Phase 4: Construction（実装）
+
 - Step 1: Task Decomposition → `aidlc-docs/construction/tasks.md`
 - Step 2: Implementation
 - Step 3: Test
 - Step 4: Approval Gate
 
 #### Phase 5: Quality Gate（品質関門）
+
 - Step 1: Code Review
 - Step 2: Security Check
 - Step 3: Performance Check
 - Step 4: Approval Gate（Go/No-Go）
 
 #### Phase 6: Delivery（デリバリー）
+
 - Step 1: CI/CD Setup
 - Step 2: Deploy
 - Step 3: Documentation → `aidlc-docs/delivery/docs/`

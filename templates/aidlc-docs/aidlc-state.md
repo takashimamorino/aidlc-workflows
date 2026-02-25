@@ -19,12 +19,12 @@
 
 ## Phase 2: Blueprint（設計）
 
-- [ ] Step 1: Architecture（アーキテクチャ設計）
-  - AIが技術選定・システム構成を提案する
-  - 成果物: `blueprint/architecture.md`
-- [ ] Step 2: UI/UX Design（UI/UX設計）
-  - AIが画面構成・ユーザーフローを設計する
+- [ ] Step 1: UI Design（UI設計 — ラフレベル）
+  - AIが画面一覧・遷移フロー・各画面の概要をラフレベルで設計する
   - 成果物: `blueprint/ui-design.md`
+- [ ] Step 2: Architecture（アーキテクチャ設計）
+  - UI構成を踏まえ、AIが技術選定・システム構成を提案する
+  - 成果物: `blueprint/architecture.md`
 - [ ] Step 3: Data Model（データモデル設計）
   - AIがエンティティ・リレーションを設計する
   - 成果物: `blueprint/data-model.md`
@@ -36,18 +36,20 @@
 
 ## Phase 3: Prototype（検証）
 
-- [ ] Step 1: Prototype Design（プロトタイプ設計）
+- [ ] Step 1: Prototype Design（プロトタイプ設計 + ラフ UI → 実装レベル UI 確定）
   - AIが最小限のエンティティ・ユースケース・モックデータを定義する
+  - Phase 2 のラフ UI 設計を実装レベルに詳細化し確定する（レイアウト・コンポーネント・表示データ・インタラクション）
   - 成果物: `prototype/design.md`
-- [ ] Step 2: Rapid Build（高速構築）
-  - AIが動作するプロトタイプを高速生成する（品質より速度優先）
+- [ ] Step 2: Rapid Build（高速構築・UI設計に忠実に実装）
+  - AIが動作するプロトタイプを高速生成する（品質より速度優先、ただしUI設計は忠実に）
   - 成果物: `prototype/` 配下のコード
 - [ ] Step 3: Review & Feedback（レビュー・フィードバック）
   - 人間がプロトタイプを触って判断する
   - → 方向性が違う → Phase 1 に戻る
   - → 設計を変えたい → Phase 2 に戻る
-  - → UI/操作感を改善 → Step 2 に戻り再ビルド
-  - → OK → Phase 4 へ進む
+  - → 画面構成・導線を変えたい → Step 1 に戻りUI設計修正
+  - → 画面の見た目・表示を調整 → Step 2 に戻り再ビルド
+  - → OK → Phase 4 へ進む（UI設計確定）
 
 ## Phase 4: Construction（実装）※仮
 
