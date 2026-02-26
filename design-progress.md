@@ -12,8 +12,8 @@
 - [x] Phase 1: Inception 詳細設計
 - [x] Phase 2: Blueprint 詳細設計
 - [x] Phase 3: Prototype 詳細設計
-- [ ] Phase 4: Construction 詳細設計
-- [ ] Phase 5: Quality Gate 詳細設計
+- [x] Phase 4: Construction 詳細設計
+- [x] Phase 5: Quality Gate 詳細設計
 - [ ] Phase 6: Delivery 詳細設計
 - [ ] 全フェーズ確定後、ドキュメント最終整備
 - [ ] Claude Code プラグイン化
@@ -34,9 +34,7 @@
 ### Phase 2: Blueprint（設計）
 
 - Step 1: UI Design（ラフレベル: 画面一覧・遷移フロー・画面概要）→ `aidlc-docs/blueprint/ui-design.md`
-- Step 2: Architecture（UI構成を踏まえて技術選定）→ `aidlc-docs/blueprint/architecture.md`
-- Step 3: Data Model → `aidlc-docs/blueprint/data-model.md`
-- Step 4: Approval Gate（承認）
+- Step 2: Approval Gate（承認）
 
 ### Phase 3: Prototype（検証）
 
@@ -51,28 +49,29 @@
   - OK → Phase 4 へ進む（UI設計確定）
   - ※ 戻る際は `aidlc-docs/log.md` にフィードバック理由を記録
 
-### Phase 4〜6（仮案・未確定）
+### Phase 4: Construction（実装）
 
-#### Phase 4: Construction（実装）
+- AI agent が完全自律で実装する。人間はコードを書かない。
+- プロトタイプは UI・動作の参照としてのみ使用し、プロダクションコードはゼロから構築する。
+- Step 1: Architecture（アーキテクチャ設計）→ `aidlc-docs/construction/architecture.md`
+  - プロトタイプ検証を踏まえてプロダクション用アーキテクチャを設計
+- Step 2: Data Model（データモデル設計）→ `aidlc-docs/construction/data-model.md`
+  - Architecture を踏まえてエンティティ・リレーション・APIマッピングを設計
+- Step 3: Implementation（一括実装）
+  - AI agent が全機能を一括実装（コード + テスト）
+- Step 4: Approval Gate（承認・フィードバックループ）
+  - 方向性違い → Phase 1、設計変更 → Phase 2、UI変更 → Phase 3、実装修正 → Step 3
 
-- Step 1: Task Decomposition → `aidlc-docs/construction/tasks.md`
-- Step 2: Implementation
-- Step 3: Test
-- Step 4: Approval Gate
+### Phase 5: Quality Gate（品質関門）
 
-#### Phase 5: Quality Gate（品質関門）
+- Construction の「動くか？」に対し、「品質は十分か？」を横断的に検証する。
+- Step 1: Quality Check & Auto-Fix（品質チェック・自動修正）→ `aidlc-docs/quality-gate/report.md`
+  - コード品質・セキュリティ・パフォーマンスを一括チェック、自動修正
+- Step 2: Approval Gate（Go/No-Go）
 
-- Step 1: Code Review
-- Step 2: Security Check
-- Step 3: Performance Check
-- Step 4: Approval Gate（Go/No-Go）
+### Phase 6: Delivery（デリバリー）※未確定
 
-#### Phase 6: Delivery（デリバリー）
-
-- Step 1: CI/CD Setup
-- Step 2: Deploy
-- Step 3: Documentation → `aidlc-docs/delivery/docs/`
-- Step 4: Approval Gate（最終承認）
+- 別途設計予定
 
 ## ファイル構成
 
@@ -83,7 +82,9 @@ aidlc-workflows/
 ├── playbooks/           # AI実行手順書
 │   ├── phase1-inception.md
 │   ├── phase2-blueprint.md
-│   └── phase3-prototype.md
+│   ├── phase3-prototype.md
+│   ├── phase4-construction.md
+│   └── phase5-quality-gate.md
 ├── templates/           # 成果物テンプレート
 │   └── aidlc-docs/
 └── aidlc-docs/          # プロジェクト成果物
@@ -94,13 +95,14 @@ aidlc-workflows/
     │   ├── requirements.md
     │   └── user-stories.md
     ├── blueprint/           # Phase 2 成果物
-    │   ├── architecture.md
-    │   ├── ui-design.md
-    │   └── data-model.md
+    │   └── ui-design.md
     ├── prototype/           # Phase 3 成果物
     │   └── design.md
     ├── construction/        # Phase 4 成果物
-    │   └── tasks.md
+    │   ├── architecture.md
+    │   └── data-model.md
+    ├── quality-gate/        # Phase 5 成果物
+    │   └── report.md
     └── delivery/            # Phase 6 成果物
         └── docs/
 ```

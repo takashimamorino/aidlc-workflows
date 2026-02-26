@@ -22,13 +22,7 @@
 - [ ] Step 1: UI Design（UI設計 — ラフレベル）
   - AIが画面一覧・遷移フロー・各画面の概要をラフレベルで設計する
   - 成果物: `blueprint/ui-design.md`
-- [ ] Step 2: Architecture（アーキテクチャ設計）
-  - UI構成を踏まえ、AIが技術選定・システム構成を提案する
-  - 成果物: `blueprint/architecture.md`
-- [ ] Step 3: Data Model（データモデル設計）
-  - AIがエンティティ・リレーションを設計する
-  - 成果物: `blueprint/data-model.md`
-- [ ] Step 4: Approval Gate（承認）
+- [ ] Step 2: Approval Gate（承認）
   - 人間が設計方針を確認し承認する
 
 ## Phase 3: Prototype（検証）
@@ -48,30 +42,36 @@
   - → 画面の見た目・表示を調整 → Step 2 に戻り再ビルド
   - → OK → Phase 4 へ進む（UI設計確定）
 
-## Phase 4: Construction（実装）※仮
+## Phase 4: Construction（実装）
 
-- [ ] Step 1: Task Decomposition（タスク分解）
-  - AIが設計に基づきタスクを生成する
-  - 成果物: `construction/tasks.md`
-- [ ] Step 2: Implementation（実装）
-  - 各メンバーがAIとペアで担当タスクを実装する
-  - 成果物: プロダクションコード
-- [ ] Step 3: Test（テスト）
-  - AIがユニット・統合テストを作成・実行する
-  - 成果物: テストコード・テスト結果
+- [ ] Step 1: Architecture（アーキテクチャ設計）
+  - プロトタイプ検証を踏まえ、AI がプロダクション用のアーキテクチャを設計する
+  - 成果物: `construction/architecture.md`
+- [ ] Step 2: Data Model（データモデル設計）
+  - Architecture を踏まえ、AI がエンティティ・リレーション・APIマッピングを設計する
+  - 成果物: `construction/data-model.md`
+- [ ] Step 3: Implementation（実装）
+  - AI agent が全機能を一括実装する（コード + テスト）
+  - プロトタイプは参照のみ。プロダクション品質でゼロから構築する
+  - 成果物: プロダクションコード + テストコード
 - [ ] Step 4: Approval Gate（承認）
   - 人間が実装結果をレビューし承認する
+  - → 方向性が違う → Phase 1 に戻る
+  - → 画面構成・フロー変更 → Phase 2 に戻る
+  - → UI詳細変更 → Phase 3 に戻る
+  - → アーキテクチャ変更 → Step 1 に戻る
+  - → データモデル変更 → Step 2 に戻る
+  - → 実装の修正 → Step 3 に戻り修正
+  - → OK → Phase 5 へ進む
 
-## Phase 5: Quality Gate（品質関門）※仮
+## Phase 5: Quality Gate（品質関門）
 
-- [ ] Step 1: Code Review（コードレビュー）
-  - AIがコード品質・ベストプラクティスをチェックする
-- [ ] Step 2: Security Check（セキュリティチェック）
-  - AIが脆弱性・セキュリティリスクを検査する
-- [ ] Step 3: Performance Check（パフォーマンス検証）
-  - AIがパフォーマンス問題を検出する
-- [ ] Step 4: Approval Gate（承認）
-  - 人間がGo/No-Go判断する
+- [ ] Step 1: Quality Check & Auto-Fix（品質チェック・自動修正）
+  - AI agent がコード品質・セキュリティ・パフォーマンスを横断的にチェックする
+  - 自動修正可能な問題は修正し、品質レポートを生成する
+  - 成果物: `quality-gate/report.md`
+- [ ] Step 2: Approval Gate（Go/No-Go）
+  - 人間が品質レポートをレビューし、Go/No-Go 判断する
 
 ## Phase 6: Delivery（デリバリー）※仮
 
