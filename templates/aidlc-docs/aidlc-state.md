@@ -6,6 +6,24 @@
 
 ---
 
+## 横断ルール
+
+### 過信防止（Overconfidence Prevention）
+
+- AIは「たぶんこうだろう」で進めず、不確実な点は人間に質問すること
+- 特に以下の場面では確認を優先する:
+  - 要件の解釈が複数あり得るとき
+  - 技術選定でトレードオフがあるとき
+  - スコープの境界が曖昧なとき
+
+### 監査ログ（Audit Log）
+
+- `aidlc-docs/audit.md` にはユーザーの発言を原文のまま記録すること（要約・言い換え禁止）
+- 追記のみ。過去の記録を上書き・削除しない
+- 各エントリにはフェーズ・ステップのコンテキストを含める
+
+---
+
 ## Phase 1: Inception（構想）
 
 - [ ] Step 1: Intent（意図の表明）
@@ -13,6 +31,7 @@
   - 成果物: `inception/intent.md`
 - [ ] Step 2: Requirements（要件の具体化）
   - AIが要件・ユーザーストーリー・MVPスコープを生成する
+  - 要件間の矛盾を検出し、解消されるまで次に進まないこと
   - 成果物: `inception/requirements.md`, `inception/user-stories.md`
 - [ ] Step 3: Approval Gate（承認）
   - 人間が要件を確認し承認する
@@ -46,13 +65,17 @@
 
 - [ ] Step 1: Architecture（アーキテクチャ設計）
   - プロトタイプ検証を踏まえ、AI がプロダクション用のアーキテクチャを設計する
+  - 認可ポリシーを明記すること（誰がどのリソースにアクセスできるか）
   - 成果物: `construction/architecture.md`
 - [ ] Step 2: Data Model（データモデル設計）
   - Architecture を踏まえ、AI がエンティティ・リレーション・APIマッピングを設計する
+  - インデックス戦略を明記すること（外部キー、検索対象カラム）
   - 成果物: `construction/data-model.md`
 - [ ] Step 3: Implementation（実装）
-  - AI agent が全機能を一括実装する（コード + テスト）
+  - AI agent が全機能を実装する（コード + テスト）
   - プロトタイプは参照のみ。プロダクション品質でゼロから構築する
+  - テストコードは必須。最低限 API エンドポイントの統合テストを含むこと
+  - 実装完了の条件: ビルド成功 + 全テスト通過
   - 成果物: プロダクションコード + テストコード
 - [ ] Step 4: Approval Gate（承認）
   - 人間が実装結果をレビューし承認する
@@ -67,9 +90,10 @@
 ## Phase 5: Quality Gate（品質関門）
 
 - [ ] Step 1: Quality Check & Auto-Fix（品質チェック・自動修正）
-  - AI agent がコード品質・セキュリティ・パフォーマンスを横断的にチェックする
+  - AI agent がコード品質（重複検出含む）・セキュリティ・パフォーマンスを横断的にチェックする
+  - テスト実行: 全テストが通ることを確認する
   - 自動修正可能な問題は修正し、品質レポートを生成する
-  - 成果物: `quality-gate/report.md`
+  - 成果物: `quality-gate/report.md`（テスト結果を含む）
 - [ ] Step 2: Approval Gate（Go/No-Go）
   - 人間が品質レポートをレビューし、Go/No-Go 判断する
 

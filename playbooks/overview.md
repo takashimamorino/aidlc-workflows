@@ -16,7 +16,15 @@ Phase 1: Inception → Phase 2: Blueprint → Phase 3: Prototype → Phase 4: Co
 ## 横断的な仕組み
 
 - `aidlc-docs/aidlc-state.md`: 全フェーズ・ステップの進捗チェックボックス。Current Phase を常に更新する
-- `aidlc-docs/log.md`: 対話サマリー・意思決定・フィードバックを時系列に記録する
+- `aidlc-docs/audit.md`: ユーザーの発言を原文のまま記録する（要約・言い換え禁止、追記のみ）
+
+### 過信防止（Overconfidence Prevention）
+
+- AIは「たぶんこうだろう」で進めず、不確実な点は人間に質問すること
+- 特に以下の場面では確認を優先する:
+  - 要件の解釈が複数あり得るとき
+  - 技術選定でトレードオフがあるとき
+  - スコープの境界が曖昧なとき
 
 ---
 

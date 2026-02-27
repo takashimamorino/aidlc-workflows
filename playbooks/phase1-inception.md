@@ -5,7 +5,7 @@
 ## 前提条件
 
 - `aidlc-docs/aidlc-state.md` が存在すること
-- `aidlc-docs/log.md` が存在すること
+- `aidlc-docs/audit.md` が存在すること
 
 ---
 
@@ -45,7 +45,7 @@
 
 ### 記録
 
-- `aidlc-docs/log.md` の Phase 1 > Step 1 に対話サマリーを記録する
+- `aidlc-docs/audit.md` の Phase 1 > Step 1 に対話サマリーを記録する
 - 決定事項と生成した成果物を記録する
 
 ### 完了条件
@@ -82,6 +82,11 @@
    - 各ストーリーに Acceptance Criteria を付ける
    - 人間に確認: 「このユーザーストーリーで漏れはありますか？」
 
+6. **要件間の矛盾を検出・解消する**
+   - 生成した要件・ユーザーストーリー全体を通して矛盾・曖昧さを分析する
+   - 検出対象: スコープの不一致、優先度の矛盾、前提条件の競合、用語の揺れ
+   - 矛盾が見つかった場合は人間に提示し、解消されるまで次に進まない
+
 ### 成果物の生成
 
 - `aidlc-docs/inception/requirements.md` を生成する
@@ -90,7 +95,7 @@
 
 ### 記録
 
-- `aidlc-docs/log.md` の Phase 1 > Step 2 に対話サマリーを記録する
+- `aidlc-docs/audit.md` の Phase 1 > Step 2 に対話サマリーを記録する
 
 ### 完了条件
 
@@ -116,7 +121,7 @@
 
 ### 記録
 
-- `aidlc-docs/log.md` の Phase 1 > Step 3 に承認結果を記録する
+- `aidlc-docs/audit.md` の Phase 1 > Step 3 に承認結果を記録する
 
 ### 完了条件
 
