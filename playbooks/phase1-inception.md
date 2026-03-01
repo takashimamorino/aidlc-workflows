@@ -59,17 +59,23 @@
 ### 成果物の生成
 
 - 対話が十分に行われたら `aidlc-docs/inception/intent.md` を生成する
-- テンプレート: `templates/inception/intent.md` を使用
+- テンプレート: `templates/aidlc-docs/inception/intent.md` を使用
 - 生成後、人間に内容を確認してもらう
 
 ### 記録
 
-- `aidlc-docs/audit.md` の Phase 1 > Step 1 に対話サマリーを記録する
-- 決定事項と生成した成果物を記録する
+- `aidlc-docs/audit.md` の Phase 1 > Step 1 に以下を記録する:
+  - ユーザーの発言（原文のまま。要約・言い換え禁止）
+  - AIの発言（要約でよい）
+  - 決定事項と生成した成果物
 
 ### 完了条件
 
-- `aidlc-docs/inception/intent.md` が生成され、人間が内容を確認した
+- `aidlc-docs/inception/intent.md` が生成され、以下を満たしている:
+  - XY問題の検証が行われた（課題と解決策が分離して記述されている）
+  - 課題が具体的なシーン・数値・頻度を含むレベルで記述されている
+  - 制約・前提条件が確認されている
+- 人間が内容を確認した
 - `aidlc-docs/aidlc-state.md` の Step 1 チェックボックスを `[x]` にする
 
 ---
@@ -96,6 +102,7 @@
      - **外部連携**: 他サービスとの連携は？データのインポート/エクスポートは？
    - 各カテゴリについて「この観点は必要ですか？」と人間に確認する
    - 明らかに不要なものはAIがスキップしてよい
+   - チェックの結果、新たに必要と判断した機能は手順2の機能要件一覧に追加する
 
 4. **MVPスコープを定義する**
    - Must の機能を中心にMVPスコープを提案する
@@ -139,15 +146,21 @@
 
 - `aidlc-docs/inception/requirements.md` を生成する
 - `aidlc-docs/inception/user-stories.md` を生成する
-- テンプレート: `templates/inception/` を使用
+- テンプレート: `templates/aidlc-docs/inception/` を使用
 
 ### 記録
 
-- `aidlc-docs/audit.md` の Phase 1 > Step 2 に対話サマリーを記録する
+- `aidlc-docs/audit.md` の Phase 1 > Step 2 に以下を記録する:
+  - ユーザーの発言（原文のまま。要約・言い換え禁止）
+  - AIの発言（要約でよい）
+  - 決定事項と生成した成果物
 
 ### 完了条件
 
-- `aidlc-docs/inception/requirements.md` と `aidlc-docs/inception/user-stories.md` が生成された
+- `aidlc-docs/inception/requirements.md` と `aidlc-docs/inception/user-stories.md` が生成され、以下を満たしている:
+  - すべての AC が品質基準（具体的・検証可能・一意に解釈できる）を満たしている
+  - 各ユーザーストーリーに異常系・エッジケースが検討されている
+  - 要件間の矛盾が検出・解消されている
 - 人間が内容を確認した
 - `aidlc-docs/aidlc-state.md` の Step 2 チェックボックスを `[x]` にする
 
@@ -161,9 +174,16 @@
 
 1. **全成果物を要約して提示する**
    - intent.md、requirements.md、user-stories.md の要点をまとめて提示する
-   - 「以上が Phase 1 の成果物です。承認いただけますか？」と問う
 
-2. **人間の判断を受ける**
+2. **承認チェックリストを提示する**
+   - 以下の観点を人間に確認してもらう:
+     - スコープに漏れはないか？（やりたかったことが Out of Scope に入っていないか）
+     - 優先度は妥当か？（Must に入るべきものが Should/Could になっていないか）
+     - AC は具体的で検証可能か？（曖昧な表現が残っていないか）
+     - 異常系の考慮は十分か？
+   - 「以上が Phase 1 の成果物です。チェックリストの観点を踏まえて、承認いただけますか？」と問う
+
+3. **人間の判断を受ける**
    - **承認**: Phase 2 に進む
    - **フィードバックあり**: 指摘された箇所を修正し、再度承認を求める
 
