@@ -1,0 +1,7 @@
+{
+  "name": "aidlc",
+  "version": "1.0.0",
+  "description": "AI-Driven Development Lifecycle - AIが駆動し、人間が舵を取る開発ワークフロー",
+  "author": { "name": "takashima" },
+  "license": "MIT"
+}

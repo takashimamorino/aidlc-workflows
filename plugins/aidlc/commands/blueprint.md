@@ -1,15 +1,19 @@
-# Phase 2: Blueprint プレイブック
+---
+description: "Phase 2: Blueprint - UI設計フェーズ（画面一覧・遷移フロー・画面概要）"
+---
 
-> 要件をもとに、プロダクトの画面構成・ユーザーフローをラフレベルで設計する
+# Phase 2: Blueprint
+
+要件をもとに、プロダクトの画面構成・ユーザーフローをラフレベルで設計する。
 
 ## 前提条件
 
-- Phase 1 が完了していること（aidlc-docs/aidlc-state.md で確認）
-- `aidlc-docs/inception/intent.md`, `aidlc-docs/inception/requirements.md`, `aidlc-docs/inception/user-stories.md` が存在すること
+- `aidlc-docs/aidlc-state.md` を読み込み、Phase 1 が完了していることを確認する
+- Phase 1 が未完了の場合は `/aidlc:inception` を案内して終了する
 
 ## フェーズ開始時の成果物読み込み
 
-Phase 2 の各ステップに入る前に、以下の成果物を一括で読み込む:
+以下の成果物を一括で読み込む:
 
 - `aidlc-docs/inception/intent.md`
 - `aidlc-docs/inception/requirements.md`
@@ -19,10 +23,12 @@ Phase 2 の各ステップに入る前に、以下の成果物を一括で読み
 
 ## Step 1: UI Design（UI設計 — ラフレベル）
 
+> `aidlc-docs/aidlc-state.md` の Step 1 チェックボックスを確認する
+>
 > **スコープ**: 画面一覧・画面遷移フロー・各画面の概要（何をする画面か）をラフレベルで定義する。
 > レイアウト詳細・コンポーネント構成・表示データ・インタラクションは Phase 3 で確定する。
 
-### AIの行動
+### 行動
 
 1. **Phase 1 の成果物を読み込む**
    - intent.md、requirements.md、user-stories.md を読み込む
@@ -42,17 +48,14 @@ Phase 2 の各ステップに入る前に、以下の成果物を一括で読み
    - ※ 詳細なレイアウト（ASCII ワイヤーフレーム）やインタラクション定義は Phase 3 で行う
    - 人間に確認: 「この画面構成でイメージと合っていますか？」
 
-### 成果物の生成
+### 成果物
 
 - `aidlc-docs/blueprint/ui-design.md` を生成する
-- テンプレート: `templates/blueprint/ui-design.md` を使用
+- `aidlc-docs/blueprint/ui-design.md` のテンプレート構造に従う
 
 ### 記録
 
-- `aidlc-docs/audit.md` に以下を記録する:
-  - ユーザーの発言（原文のまま。要約・言い換え禁止）
-  - AIの発言（要約でよい）
-  - 決定事項と生成した成果物
+- `aidlc-docs/audit.md` に記録する
 
 ### 完了条件
 
@@ -63,9 +66,9 @@ Phase 2 の各ステップに入る前に、以下の成果物を一括で読み
 
 ## Step 2: Approval Gate（承認）
 
-> **承認ゲート**: 中間ステップの「確認」と異なり、フェーズ全体の成果物を判断する。承認されれば次フェーズへ進む。
+> **承認ゲート**: 中間ステップの「確認」と異なり、フェーズ全体の成果物を判断する。
 
-### AIの行動
+### 行動
 
 1. **Blueprint の成果物を要約して提示する**
    - UI設計の要点をまとめて提示する:

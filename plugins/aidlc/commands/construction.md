@@ -1,16 +1,20 @@
-# Phase 4: Construction プレイブック
+---
+description: "Phase 4: Construction - 実装フェーズ（Architecture → Data Model → Implementation → Approval Gate）"
+---
 
-> 設計成果物をプロダクションコードに変換する。AI agent が完全自律で実装し、人間はコードを書かない。
+# Phase 4: Construction
+
+設計成果物をプロダクションコードに変換する。AI agent が完全自律で実装し、人間はコードを書かない。
 
 ## 前提条件
 
-- Phase 3 が完了していること（aidlc-docs/aidlc-state.md で確認）
+- `aidlc-docs/aidlc-state.md` を読み込み、Phase 3 が完了していることを確認する
+- Phase 3 が未完了の場合は `/aidlc:prototype` を案内して終了する
 - プロトタイプが承認され、UI設計が確定していること
-- `aidlc-docs/` 配下の全成果物が存在すること
 
 ## フェーズ開始時の成果物読み込み
 
-Phase 4 の各ステップに入る前に、以下の成果物を一括で読み込む:
+以下の成果物を一括で読み込む:
 
 - `aidlc-docs/inception/intent.md`
 - `aidlc-docs/inception/requirements.md`
@@ -28,9 +32,9 @@ Phase 4 の各ステップに入る前に、以下の成果物を一括で読み
 
 ## Step 1: Architecture（アーキテクチャ設計）
 
-> プロトタイプで検証した結果を踏まえて、プロダクション用のアーキテクチャを設計する。
+> `aidlc-docs/aidlc-state.md` の Step 1 チェックボックスを確認する
 
-### AIの行動
+### 行動
 
 1. **プロトタイプの結果を踏まえて技術要件を整理する**
    - prototype/design.md の確定済み UI 設計を把握する
@@ -53,17 +57,14 @@ Phase 4 の各ステップに入る前に、以下の成果物を一括で読み
 4. **技術的な意思決定を記録する**
    - 重要な技術選定について、選択肢・比較・決定理由を記録する
 
-### 成果物の生成
+### 成果物
 
 - `aidlc-docs/construction/architecture.md` を生成する
-- テンプレート: `templates/construction/architecture.md` を使用
+- `aidlc-docs/construction/architecture.md` のテンプレート構造に従う
 
 ### 記録
 
-- `aidlc-docs/audit.md` に以下を記録する:
-  - ユーザーの発言（原文のまま。要約・言い換え禁止）
-  - AIの発言（要約でよい）
-  - 決定事項と生成した成果物
+- `aidlc-docs/audit.md` に記録する
 
 ### 完了条件
 
@@ -74,9 +75,9 @@ Phase 4 の各ステップに入る前に、以下の成果物を一括で読み
 
 ## Step 2: Data Model（データモデル設計）
 
-> Architecture で決定した技術スタックを踏まえ、プロダクション用のデータモデルを設計する。
+> `aidlc-docs/aidlc-state.md` の Step 2 チェックボックスを確認する
 
-### AIの行動
+### 行動
 
 1. **要件と画面設計からエンティティを抽出する**
    - requirements.md、ui-design.md、prototype/design.md を読み込む
@@ -97,17 +98,14 @@ Phase 4 の各ステップに入る前に、以下の成果物を一括で読み
 5. **API ↔ データモデルのマッピングを作成する**
    - construction/architecture.md のAPIエンドポイントと、各エンティティの対応を記述する
 
-### 成果物の生成
+### 成果物
 
 - `aidlc-docs/construction/data-model.md` を生成する
-- テンプレート: `templates/construction/data-model.md` を使用
+- `aidlc-docs/construction/data-model.md` のテンプレート構造に従う
 
 ### 記録
 
-- `aidlc-docs/audit.md` に以下を記録する:
-  - ユーザーの発言（原文のまま。要約・言い換え禁止）
-  - AIの発言（要約でよい）
-  - 決定事項と生成した成果物
+- `aidlc-docs/audit.md` に記録する
 
 ### 完了条件
 
@@ -118,14 +116,11 @@ Phase 4 の各ステップに入る前に、以下の成果物を一括で読み
 
 ## Step 3: Implementation（実装）
 
+> `aidlc-docs/aidlc-state.md` の Step 3 チェックボックスを確認する
+>
 > **プロダクション品質の原則**: Phase 3 の「速度優先」とは逆に、保守性・堅牢性を重視する。
-> - 適切な型定義・型安全性を確保する
-> - エラーハンドリングを適切に実装する
-> - ハードコードを避け、設定値を外出しする
-> - コードの重複を排除し、再利用可能な設計にする
-> - テストを書く（受入基準をカバー）
 
-### AIの行動
+### 行動
 
 1. **プロジェクトをセットアップする**
    - construction/architecture.md に従い、プロダクション用プロジェクトを新規作成する
@@ -134,7 +129,11 @@ Phase 4 の各ステップに入る前に、以下の成果物を一括で読み
 
 2. **全機能を一括実装する**
    - user-stories.md の受入基準、prototype/design.md の UI 設計を満たすように実装する
-   - プロダクション品質のコードを書く
+   - プロダクション品質のコードを書く:
+     - 適切な型定義・型安全性を確保する
+     - エラーハンドリングを適切に実装する
+     - ハードコードを避け、設定値を外出しする
+     - コードの重複を排除し、再利用可能な設計にする
    - 受入基準を満たすテストを書く
    - テストを実行し、パスすることを確認する
    - construction/architecture.md の技術選定・構成パターンに従う
@@ -147,7 +146,7 @@ Phase 4 の各ステップに入る前に、以下の成果物を一括で読み
    - 主要なユーザーフローが動作することを確認する
    - 問題があればその場で修正する
 
-### 成果物の生成
+### 成果物
 
 - プロダクションコード（architecture.md で定義されたプロジェクトディレクトリに生成）
 - テストコード
@@ -171,7 +170,7 @@ Phase 4 の各ステップに入る前に、以下の成果物を一括で読み
 
 > **承認ゲート**: 実装結果を人間がレビューし、承認する。
 
-### AIの行動
+### 行動
 
 1. **実装結果を提示する**
    - アプリケーションの起動方法を伝える
@@ -184,7 +183,7 @@ Phase 4 の各ステップに入る前に、以下の成果物を一括で読み
 2. **フィードバックに基づき次のアクションを決定する**
 
    | フィードバック内容 | アクション |
-   |-------------------|-----------|
+   |---|---|
    | そもそも方向性が違う | Phase 1 (Inception) に戻る。intent.md を修正 |
    | 画面構成・フローを変えたい | Phase 2 (Blueprint) に戻る。UI Design を修正 |
    | UI詳細を変えたい | Phase 3 (Prototype) に戻る。UI設計を修正 |
