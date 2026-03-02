@@ -1,0 +1,15 @@
+{
+  "name": "aidlc-workflows",
+  "owner": { "name": "takashima" },
+  "metadata": {
+    "description": "AI-Driven Development Lifecycle ワークフロー",
+    "version": "1.0.0"
+  },
+  "plugins": [
+    {
+      "name": "aidlc",
+      "description": "AI-DLC 6フェーズ開発ワークフロー",
+      "source": "./plugins/aidlc"
+    }
+  ]
+}
